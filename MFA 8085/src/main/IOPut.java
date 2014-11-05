@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import main.gui.GUI;
+
 
 public class IOPut 
 {

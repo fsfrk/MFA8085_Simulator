@@ -14,6 +14,8 @@ import java.awt.event.WindowListener;
 import java.util.HashMap;
 import java.util.Map;
 
+import main.gui.GUI;
+
 public class CPU implements ActionListener , WindowListener
 {
 	public static final String REGISTER[] =new String[]{"A","B","C","D","E","H","L","SP"};

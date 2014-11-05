@@ -1,4 +1,7 @@
 package main;
+
+import main.gui.GUI;
+
 public final class Befehlsdatenbank 
 {
 	Befehlssatz befehle[] =new Befehlssatz[0];	
