@@ -180,7 +180,7 @@ public class CPU implements ActionListener , WindowListener
 		{
 			if(this.interpreter!=null &&this.interpreter.isAlive())
 			{
-				GUI.errormessage("Interpreter will be stop",false);
+				GUI.errormessage("Interpreter will be stop", false);
 				this.interpreter.stop();
 				this.m_item.get("interpreter").setLabel("Interpreter OFF");
 			}
