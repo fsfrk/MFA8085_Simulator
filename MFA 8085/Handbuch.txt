@@ -1,0 +1,19 @@
+mov		r=r
+mvi		r=n
+jnz		springe wenn nicht 0 ist
+jz		springe wenn 0 ist
+add		A=A+n
+sui		A=A-n
+inr		r=r+1
+IN		eingabe Port	41
+OUT		ausgabe Port	40
+
+Zahlen müssen in hex angegeben werden.
+Beispiel:
+	mvi A,f1
+
+Labels werden mit einem doppelpunkt am ende des Befehlszeile
+eingeleitet.
+
+Beispiel:
+	mov A,B :Label

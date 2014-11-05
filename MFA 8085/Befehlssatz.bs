@@ -1,0 +1,5 @@
+Name		Wert		zeilen	takt			Flag		Function				(Wert = zum umrechnen für Hexausgabe; Operation=für den Interpreter um die Function zu verstehen; r=Register;n=Nummeraler Wert(Dec))
+mov			x,x			2		4/10			xxxxxx		r=r						(Flags: C=Carry;A=Auxiliary Carry;Z=Zero;S=Sign-Flag;P=Parität;O=Overflow)
+mvi			x,x			2		1/0				xxxxxx		r=n
+jnz			x,x			4						oooooo		jnz						(j=Jump;n=Not;)
+add			x,x			2						xxxxxx		A=n
