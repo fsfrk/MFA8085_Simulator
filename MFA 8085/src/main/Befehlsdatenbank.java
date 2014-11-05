@@ -1,4 +1,4 @@
-
+package main;
 public final class Befehlsdatenbank 
 {
 	Befehlssatz befehle[] =new Befehlssatz[0];	

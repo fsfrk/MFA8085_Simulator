@@ -1,3 +1,4 @@
+package main;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
@@ -16,13 +17,12 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI {
-    protected final String MFA_ver = "MFA 8085 Version Beta 1.1"; // Name des
-								  // Projekts
-								  // und
-								  // Versionsnummer
+import main.CPU;
 
-    private static Frame fenster = new Frame();
+public class GUI {
+    protected final String MFA_ver = "MFA 8085 Version Beta 1.1"; // Name of the project + version number
+
+    private static Frame window = new Frame();
     private final Dimension screen = Toolkit.getDefaultToolkit()
 	    .getScreenSize();
 
@@ -47,12 +47,12 @@ public class GUI {
     // /////////////////////////////////////Methoden/////////////////////////////////////////////////////////
     public GUI(CPU listener) {
 	this.listener = listener;
-	fenster.setTitle(this.MFA_ver);
-	fenster.setBounds((int) (this.screen.getWidth() / 4),
+	window.setTitle(this.MFA_ver);
+	window.setBounds((int) (this.screen.getWidth() / 4),
 		(int) (this.screen.getHeight() / 4),
 		(int) (this.screen.getWidth() / 2),
 		(int) (this.screen.getHeight() / 2));
-	fenster.setMenuBar(this.menubar);
+	window.setMenuBar(this.menubar);
 
 	this.menubar.add(this.datei);
 	for (MenuItem item : this.d_item) {
@@ -73,20 +73,20 @@ public class GUI {
 	this.input = new Eingabebaugruppe(listener);
 	this.output = new Ausgabebaugruppe(listener);
 
-	fenster.setLayout(new GridLayout(1, 8, 10, 0));
-	fenster.add(this.code_input);
-	fenster.add(this.debugger);
-	fenster.add(this.output);
-	fenster.add(this.input);
-	// fenster.add(this.adconverter);
+	window.setLayout(new GridLayout(1, 8, 10, 0));
+	window.add(this.code_input);
+	window.add(this.debugger);
+	window.add(this.output);
+	window.add(this.input);
+	// window.add(this.adconverter);
 
-	this.listener.addCFrame(fenster);
-	fenster.setBackground(Color.LIGHT_GRAY);
-	fenster.setVisible(true);
+	this.listener.addCFrame(window);
+	window.setBackground(Color.LIGHT_GRAY);
+	window.setVisible(true);
     }
 
     public static void errormessage(String message, final boolean exit) {
-	final Dialog error = new Dialog(fenster, "Error", true);
+	final Dialog error = new Dialog(window, "Error", true);
 	Button ok = new Button("Ok");
 
 	error.setLayout(new BorderLayout());
@@ -108,8 +108,8 @@ public class GUI {
     public static void rechner(CPU listener) {
 	Frame rechner = new Frame("Rechner");
 	TextField hex = new TextField(), dec = new TextField(), bin = new TextField();
-	Label text[] = new Label[] { new Label("Decimal: "), new Label("Hex:"),
-		new Label("Bin√§r: ") };
+	Label text[] = new Label[] { new Label("Dezimal: "), new Label("Hex: "),
+		new Label("Bin‰r: ") };
 	Button key = new Button("Umrechnen");
 
 	key.setActionCommand("umrechnen");
