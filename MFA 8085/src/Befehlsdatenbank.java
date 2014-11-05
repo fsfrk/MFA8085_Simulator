@@ -1,4 +1,3 @@
-
 public final class Befehlsdatenbank {
     Befehlssatz befehle[] = new Befehlssatz[0];
 
@@ -12,21 +11,21 @@ public final class Befehlsdatenbank {
 
     public void addEntry(byte flag, byte rows, String command, byte takt[],
 	    byte value[], String function[]) {
-	Befehlssatz sp[] = this.befehle;
-	this.befehle = new Befehlssatz[befehle.length + 1];
+	Befehlssatz sp[] = befehle;
+	befehle = new Befehlssatz[befehle.length + 1];
 
 	for (byte i = 0; i < sp.length; i++) {
-	    this.befehle[i] = sp[i];
+	    befehle[i] = sp[i];
 	}
-	this.befehle[sp.length] = new Befehlssatz(flag, rows, command, takt,
-		value, function);
+	befehle[sp.length] = new Befehlssatz(flag, rows, command, takt, value,
+		function);
     }
 
     // //////////////////////////////////////////////////////////////////////////////////////////////////////
     // /////////////////////////////////////get
     // Methoden/////////////////////////////////////////////////////
     public final byte getflag(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.flagset;
 	    }
@@ -36,7 +35,7 @@ public final class Befehlsdatenbank {
     }
 
     public final byte getrow(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.rows;
 	    }
@@ -46,7 +45,7 @@ public final class Befehlsdatenbank {
     }
 
     public final byte gettakt1(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.taktzyklen1;
 	    }
@@ -57,7 +56,7 @@ public final class Befehlsdatenbank {
     }
 
     public final byte gettakt2(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.taktzyklen2;
 	    }
@@ -68,7 +67,7 @@ public final class Befehlsdatenbank {
     }
 
     public final byte[] getvalue(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.assemblerwert;
 	    }
@@ -79,14 +78,14 @@ public final class Befehlsdatenbank {
 
     public final String getcommands() {
 	String text = "";
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    text = text + "#" + sp.befehl;
 	}
 	return text;
     }
 
     public final String[] getfunction(String name) {
-	for (Befehlssatz sp : this.befehle) {
+	for (Befehlssatz sp : befehle) {
 	    if (sp.befehl.equals(name)) {
 		return sp.function;
 	    }
@@ -105,17 +104,17 @@ public final class Befehlsdatenbank {
 	protected byte taktzyklen1; // Anzahl der Takte zum Ausf�hren[0]
 	protected byte taktzyklen2;
 	protected byte assemblerwert[]; // Beinhaltet die Werte zum umrechnen in
-					// Maschinencode
+	// Maschinencode
 	protected String function[]; // Function des Befehls
 
 	public Befehlssatz(byte flag, byte rows, String command, byte takt[],
 		byte value[], String function[]) {
-	    this.flagset = flag;
+	    flagset = flag;
 	    this.rows = rows;
-	    this.befehl = command;
-	    this.taktzyklen1 = takt[0];
-	    this.taktzyklen2 = takt[1];
-	    this.assemblerwert = value;
+	    befehl = command;
+	    taktzyklen1 = takt[0];
+	    taktzyklen2 = takt[1];
+	    assemblerwert = value;
 	    this.function = function;
 	}
     }
