@@ -29,7 +29,7 @@ public class GUI {
     private MenuBar menubar = new MenuBar();
     private Menu datei = new Menu("Datei");
     private Menu extras = new Menu("Extras");
-    private Menu ausführen = new Menu("AusfÃ¼hren");
+    private Menu ausfuhren = new Menu("AusfÃ¼hren");
     private MenuItem d_item[] = new MenuItem[] { new MenuItem("Beenden") };
     private MenuItem e_item[] = new MenuItem[] { new MenuItem("Rechner"),
 	    new MenuItem("Befehlssatz"), new MenuItem("Hilfe") };
@@ -64,8 +64,8 @@ public class GUI {
 	    this.extras.add(item);
 	    this.listener.addMenuitem(item, item.getLabel());
 	}
-	this.menubar.add(this.ausführen);
-	this.ausführen.add(this.i_item);
+	this.menubar.add(this.ausfuhren);
+	this.ausfuhren.add(this.i_item);
 	this.listener.addMenuitem(this.i_item, "interpreter");
 
 	this.code_input = new EingabeCode(listener);
