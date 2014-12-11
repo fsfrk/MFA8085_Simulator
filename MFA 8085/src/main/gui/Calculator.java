@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-import main.CPU;
-
-class Calculator extends Frame implements ActionListener, WindowListener {
-    Calculator(CPU listener) {
+public class Calculator extends Frame implements ActionListener, WindowListener {
+    public Calculator() {
 	setTitle("Rechner");
 	TextField hex = new TextField(), dec = new TextField(), bin = new TextField();
 	Label text[] = new Label[] { new Label("Dezimal: "), new Label("Hex: "), new Label("Biner: ") };

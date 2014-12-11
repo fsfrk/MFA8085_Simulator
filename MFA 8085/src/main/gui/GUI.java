@@ -9,7 +9,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.HashMap;
 
-import main.CPU;
 import main.listener.guiListener;
 
 public class GUI implements WindowListener {
@@ -61,10 +60,6 @@ public class GUI implements WindowListener {
 
     public static Modulable getModul(Integer port) {
 	return modules.get(port);
-    }
-
-    public static void createCalculator(CPU listener) {
-	new Calculator(listener);
     }
 
     public static void createErrorMessage(String message, final boolean exit) {

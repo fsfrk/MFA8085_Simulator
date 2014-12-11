@@ -13,16 +13,14 @@ public final class Befehlsdatenbank {
 	return null;
     }
 
-    public void addEntry(byte flag, byte rows, String command, byte takt[],
-	    byte value[], String function[]) {
+    public void addEntry(byte flag, byte rows, String command, byte takt[], byte value[], String function[]) {
 	Befehlssatz sp[] = this.befehle;
 	this.befehle = new Befehlssatz[befehle.length + 1];
 
 	for (byte i = 0; i < sp.length; i++) {
 	    this.befehle[i] = sp[i];
 	}
-	this.befehle[sp.length] = new Befehlssatz(flag, rows, command, takt,
-		value, function);
+	this.befehle[sp.length] = new Befehlssatz(flag, rows, command, takt, value, function);
     }
 
     // //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -98,21 +96,17 @@ public final class Befehlsdatenbank {
 	return null;
     }
 
-    // //////////////////////////////////////////////////////////////////////////////////////////////////////
-    // /////////////////////////////////////Unter
-    // Classen////////////////////////////////////////////////////
     private final class Befehlssatz {
-	protected byte flagset;
-	protected byte rows; // in Assembler ben�tigte Hex Zeilen
-	protected String befehl; // Assembler Befehl
-	protected byte taktzyklen1; // Anzahl der Takte zum Ausf�hren[0]
-	protected byte taktzyklen2;
-	protected byte assemblerwert[]; // Beinhaltet die Werte zum umrechnen in
-					// Maschinencode
-	protected String function[]; // Function des Befehls
+	protected byte   flagset;
+	protected byte   rows;	   // in Assembler ben�tigte Hex Zeilen
+	protected String befehl;	 // Assembler Befehl
+	protected byte   taktzyklen1;    // Anzahl der Takte zum Ausf�hren[0]
+	protected byte   taktzyklen2;
+	protected byte   assemblerwert[]; // Beinhaltet die Werte zum umrechnen in
+					  // Maschinencode
+	protected String function[];     // Function des Befehls
 
-	public Befehlssatz(byte flag, byte rows, String command, byte takt[],
-		byte value[], String function[]) {
+	public Befehlssatz(byte flag, byte rows, String command, byte takt[], byte value[], String function[]) {
 	    this.flagset = flag;
 	    this.rows = rows;
 	    this.befehl = command;

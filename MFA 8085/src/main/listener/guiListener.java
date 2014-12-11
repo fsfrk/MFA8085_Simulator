@@ -1,28 +1,26 @@
 package main.listener;
 
-import java.awt.MenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import main.CPU;
+import main.gui.Calculator;
 
 public class guiListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-	/*
-	 * switch (Integer.parseInt(arg0.getActionCommand())) { case 1:
-	 * System.exit(0); case 10: CPU.toogleInterpreter(); break; }
-	 */
 	try {
-	    MenuItem sp = (MenuItem) (arg0.getSource());
-	    if (sp.getLabel().equals("Interpreter")) {
-		try {
+	    switch (Integer.parseInt(arg0.getActionCommand())) {
+		case 0:
+		    System.exit(0);
+		case 11:
 		    CPU.toogleInterpreter();
-		}
-		catch (Exception a) {
-		    System.out.println("Interpreter Error");
-		}
+		    break;
+		case 13:
+		    new Calculator();
+		    break;
+
 	    }
 	}
 	catch (Exception e) {

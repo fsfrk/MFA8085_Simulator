@@ -32,6 +32,7 @@ public class CPU {
     }
 
     public static void main(String[] args) {
+	new IOPut(befehl_DB);
 	new GUI(new guiListener());
     }
 
